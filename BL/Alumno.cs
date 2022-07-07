@@ -20,14 +20,19 @@ namespace BL
 
                     SqlCommand cmd = new SqlCommand();
 
-                    cmd.CommandText = "INSERT INTO Alumno(Nombre, Genero) VALUES(@Nombre, @Genero)";
+                    cmd.CommandText = "INSERT INTO Alumno(Nombre, ApellidoPaterno, ApellidoMaterno , Email) VALUES(@Nombre, @ApellidoPaterno, @ApellidoMaterno, @Email)";
                     cmd.Connection = context;
 
-                    SqlParameter[] collection = new SqlParameter[2];
+                    SqlParameter[] collection = new SqlParameter[4];
                     collection[0] = new SqlParameter("Nombre", SqlDbType.VarChar);
                     collection[0].Value = alumno.Nombre;
-                    collection[1] = new SqlParameter("Genero", SqlDbType.Char);
-                    collection[1].Value = alumno.Genero;
+                    collection[1] = new SqlParameter("ApellidoPaterno", SqlDbType.VarChar);
+                    collection[1].Value = alumno.ApellidoPaterno;
+                    collection[2] = new SqlParameter("ApellidoMaterno", SqlDbType.VarChar);
+                    collection[2].Value = alumno.ApellidoMaterno;
+                    collection[3] = new SqlParameter("Email", SqlDbType.VarChar);
+                    collection[3].Value = alumno.Email;
+
 
                     cmd.Parameters.AddRange(collection);
 

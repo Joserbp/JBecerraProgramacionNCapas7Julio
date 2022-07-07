@@ -14,8 +14,12 @@ namespace PL
 
             Console.WriteLine("Ingrese el nombre del alumno");
             alumno.Nombre = Console.ReadLine();
-            Console.WriteLine("Ingreso el genero del alumno");
-            alumno.Genero = Console.ReadLine();
+            Console.WriteLine("Ingreso el apellido paterno del alumno");
+            alumno.ApellidoPaterno = Console.ReadLine();
+            Console.WriteLine("Ingreso el apellido materno del alumno");
+            alumno.ApellidoMaterno = Console.ReadLine();
+            Console.WriteLine("Ingreso el email del alumno");
+            alumno.Email = Console.ReadLine();
 
             ML.Result result = BL.Alumno.Add(alumno);
 
