@@ -17,7 +17,16 @@ namespace PL
             Console.WriteLine("Ingreso el genero del alumno");
             alumno.Genero = Console.ReadLine();
 
-            string result = BL.Alumno.Add(alumno);
+            ML.Result result = BL.Alumno.Add(alumno);
+
+            if (result.Correct)
+            {
+                Console.WriteLine("Alumno agregado correctamente");
+            }
+            else
+            {
+                Console.WriteLine("Ocurrio un error" + result.Message);
+            }
 
             Console.WriteLine(result);
         }
