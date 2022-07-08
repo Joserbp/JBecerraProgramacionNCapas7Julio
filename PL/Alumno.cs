@@ -21,7 +21,8 @@ namespace PL
             Console.WriteLine("Ingreso el email del alumno");
             alumno.Email = Console.ReadLine();
 
-            ML.Result result = BL.Alumno.Add(alumno);
+            //ML.Result result = BL.Alumno.Add(alumno);
+            ML.Result result = BL.Alumno.AddSP(alumno);
 
             if (result.Correct)
             {
