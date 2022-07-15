@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d39c980c582246e9b5a8508c6c3911d6" Name="Diagram1" ZoomLevel="86">
+      <Diagram DiagramId="d39c980c582246e9b5a8508c6c3911d6" Name="Diagram1" ZoomLevel="125">
         <EntityTypeShape EntityType="JBecerraProgramacionNCapasJulioModel.Alumno" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="JBecerraProgramacionNCapasJulioModel.Semestre" Width="1.5" PointX="3.5" PointY="1.75" />
+        <EntityTypeShape EntityType="JBecerraProgramacionNCapasJulioModel.Semestre" Width="1.5" PointX="5.25" PointY="1.375" />
         <AssociationConnector Association="JBecerraProgramacionNCapasJulioModel.FK__Alumno__IdSemest__239E4DCF" />
       </Diagram>
     </edmx:Diagrams>

@@ -10,8 +10,8 @@ namespace PL
     {
         static void Main(string[] args)
         {
-            //PL.Alumno.GetAll();
-            PL.Alumno.Add();
+            PL.Alumno.GetAll();
+            //PL.Alumno.Add();
             Console.ReadLine();
         }
     }

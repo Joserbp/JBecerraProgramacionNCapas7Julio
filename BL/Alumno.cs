@@ -360,5 +360,52 @@ namespace BL
             }
             return result;
         }
+        public static ML.Result GetAllLINQ()
+        {
+            ML.Result result = new ML.Result();
+            try
+            {
+                using (DL_EF.JBecerraProgramacionNCapasJulioEntities context = new DL_EF.JBecerraProgramacionNCapasJulioEntities())
+                {
+                    var alumnos = (from alumnoLINQ in context.Alumnoes
+                                   select alumnoLINQ).ToList();
+
+                    if (alumnos != null)
+                    {
+                        foreach (var objAlumno in alumnos)
+                        {
+                            ML.Alumno alumno = new ML.Alumno();
+
+                            alumno.IdAlumno = objAlumno.IdAlumno;
+                            alumno.Nombre = objAlumno.Nombre;
+                            alumno.ApellidoPaterno = objAlumno.ApellidoPaterno;
+                            alumno.ApellidoMaterno = objAlumno.ApellidoMaterno;
+                            alumno.Email = objAlumno.Email;
+                            alumno.FechaNacimiento = objAlumno.FechaNacimiento.ToString();
+                            alumno.Semestre = new ML.Semestre();
+                            alumno.Semestre.IdSemestre = objAlumno.IdSemestre.Value;
+
+                            result.Objects.Add(alumno);
+                        }
+                        result.Correct = true;
+                    }
+                    else
+                    {
+                        result.Correct = false;
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                result.Correct = false;
+                result.Message = ex.Message;
+                result.Ex = ex;
+            }
+            return result;
+        }
+
     }
+
 }
